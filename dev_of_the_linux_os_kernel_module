@@ -1,0 +1,17 @@
+#1 Task
+sudo useradd -m studentt
+sudo passwd studentt
+sudo usermod -a -G sudo studentt
+sudo chsh -s /bin/bash studentt
+su studentt
+
+#2 Task
+#On Virtualbox has already 3 ways connecting to the Internet (by direct connection "IP", by NAT, by Proxy Server)
+
+#3 Task
+#Configure processor.
+make menuconfig
+patch -p1 < '/home/cain/Downloads/kernel_compiler_patch-master/outdated_versions/enable_additional_cpu_optimizations_for_gcc_v10.1+_kernel_v5.7.patch'
+sudo apt install build-essential make libc-dev libc6-dev gcc g++ dpkg-dev bc fakeroot libncurses5-dev libssl-dev git
+make localmodconfig
+make -j4 bindeb-pkg
