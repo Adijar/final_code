@@ -7,6 +7,12 @@ su studentt
 
 #2 Task
 #On Virtualbox has already 3 ways connecting to the Internet (by direct connection "IP", by NAT, by Proxy Server)
+#But 3rd connection via Proxy Server connecting was about this code:
+ping google.com
+ping 8.8.8.8
+nano /etc/resolv.conf
+nameserver 8.8.8.8
+ping google.com
 
 #3 Task
 #Configure processor.
@@ -15,3 +21,5 @@ patch -p1 < '/home/cain/Downloads/kernel_compiler_patch-master/outdated_versions
 sudo apt install build-essential make libc-dev libc6-dev gcc g++ dpkg-dev bc fakeroot libncurses5-dev libssl-dev git
 make localmodconfig
 make -j4 bindeb-pkg
+sudo apt-get install -y screenfetch
+screenfetch
